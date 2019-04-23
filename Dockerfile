@@ -9,5 +9,6 @@ RUN apk add --no-cache --virtual .build-deps \
         gcc \
         g++ \
         musl-dev && \
+        pip install numpy==1.14.3 Cython==0.27.3 && \
         pip install -r /requirements.txt \
         # apk del .build-deps &&
