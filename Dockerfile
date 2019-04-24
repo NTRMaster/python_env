@@ -15,5 +15,5 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h && \
         zlib-dev \
         cairo-dev && \
         pip install numpy==1.14.3 Cython==0.27.3 && \
-        pip install -r /requirements.txt \
+        pip install --no-cache-dir -r /requirements.txt \
         # apk del .build-deps &&
