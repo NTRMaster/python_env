@@ -1,4 +1,4 @@
-FROM python:3.6.8-alpine
+FROM alpine:3.9
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Asia/Shanghai
@@ -13,6 +13,8 @@ RUN apk add --no-cache --virtual .build-deps \
         jpeg-dev \
         zlib-dev \
         pkgconf \
+        python3 \
+        py3-qt5 \
         cairo-dev && \
         pip install --no-cache-dir numpy==1.14.3 Cython==0.27.3 && \
         pip install --no-cache-dir -r /requirements.txt \
