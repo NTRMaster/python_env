@@ -1,6 +1,6 @@
 FROM python:3.6.8-stretch
 
-ENV LANG=en_US.UTF-8
+ENV LANG=C.UTF-8
 ENV TZ=Asia/Shanghai
 
 ADD requirements.txt /requirements.txt
