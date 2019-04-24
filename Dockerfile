@@ -5,12 +5,15 @@ ENV TZ=Asia/Shanghai
 
 ADD requirements.txt /requirements.txt
 
-RUN apk add --no-cache --virtual .build-deps \
+RUN ln -s /usr/include/locale.h /usr/include/xlocale.h && \
+        apk add --no-cache --virtual .build-deps \
         gcc \
+        linux-headers \
         g++ \
         musl-dev \
-        libpng \
-        freetype && \
+        jpeg-dev \
+        zlib-dev \
+        cairo-dev && \
         pip install numpy==1.14.3 Cython==0.27.3 && \
         pip install -r /requirements.txt \
         # apk del .build-deps &&
