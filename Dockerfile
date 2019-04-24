@@ -6,7 +6,7 @@ ENV TZ=Asia/Shanghai
 ADD requirements.txt /requirements.txt
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        swig3.0 && \
+        swig && \
     rm -rf /var/lib/apt/lists/* && \
     # pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir \
