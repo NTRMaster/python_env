@@ -8,7 +8,9 @@ ADD requirements.txt /requirements.txt
 RUN apk add --no-cache --virtual .build-deps \
         gcc \
         g++ \
-        musl-dev && \
+        musl-dev \
+        libpng \
+        freetype && \
         pip install numpy==1.14.3 Cython==0.27.3 && \
         pip install -r /requirements.txt \
         # apk del .build-deps &&
